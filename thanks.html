@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script>window.MAGAZA_API="https://api.butitlookscute.com";</script>
 </head>
 <body>
 <div class="ribbon"><div class="wrap">
@@ -36,27 +37,21 @@
   <p style="font-size:22px;font-family:var(--display);margin:0 0 6px">Your order is in ♥</p>
   <p style="margin:0;color:var(--mute)">Reference <strong id="ref">—</strong></p>
 </div>
-
 <h2>What happens now</h2>
 <ul>
   <li>We start making your item — production takes <strong>2–5 business days</strong></li>
   <li>Then it ships from the US and arrives in <strong>3–7 business days</strong></li>
   <li>You will get a tracking link by email as soon as it leaves the facility</li>
 </ul>
-
 <div id="durum" style="margin:26px 0"></div>
-
 <h2>Need anything?</h2>
 <p>Reply to your confirmation email or write to
 <a href="mailto:info@butitlookscute.com" style="color:var(--lav)">info@butitlookscute.com</a>
 with your reference number. A real person reads it.</p>
-
 <p style="margin-top:30px"><a class="btn btn-out" href="/#shop">KEEP SHOPPING</a></p>
-
 <script>
 (function () {
-  var p = new URLSearchParams(location.search);
-  var ref = p.get('ref');
+  var p = new URLSearchParams(location.search), ref = p.get('ref');
   if (ref) document.getElementById('ref').textContent = ref;
   try { localStorage.removeItem('bilc_sepet'); } catch (e) {}
   if (!ref) return;
@@ -64,12 +59,11 @@ with your reference number. A real person reads it.</p>
     .then(function (r) { return r.json(); })
     .then(function (j) {
       if (!j || j.hata) return;
-      var d = document.getElementById('durum');
       var t = j.kargo && j.kargo.kargo && j.kargo.kargo[0];
-      d.innerHTML = '<div class="kutu"><p style="margin:0"><strong>Status:</strong> ' +
+      document.getElementById('durum').innerHTML = '<div class="kutu"><p style="margin:0"><strong>Status:</strong> ' +
         (j.durum === 'uretimde' ? 'In production' : j.durum) +
-        (t && t.takip ? ' · tracking <a href="' + (t.url || '#') + '" style="color:var(--lav)">' +
-          t.takip + '</a>' : '') + '</p></div>';
+        (t && t.takip ? ' · tracking <a href="' + (t.url || '#') + '" style="color:var(--lav)">' + t.takip + '</a>' : '') +
+        '</p></div>';
     }).catch(function () {});
 })();
 </script>

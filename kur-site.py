@@ -32,6 +32,7 @@ def bas(baslik, aciklama, aktif=''):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script>window.MAGAZA_API="https://api.butitlookscute.com";</script>
 </head>
 <body>
 <div class="ribbon"><div class="wrap">
