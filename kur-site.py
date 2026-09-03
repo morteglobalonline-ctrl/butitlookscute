@@ -42,7 +42,18 @@ def bas(baslik, aciklama, aktif=''):
   {LOGO}
   <nav>{nav}</nav>
   <a class="ig" href="{IG}" target="_blank" rel="noopener">◎ @butitlookscute</a>
+  <button class="sepet-dugme" id="sepetAc" aria-label="Basket">▢<b id="sepetSayi">0</b></button>
 </div></header>
+
+<aside class="cekmece" id="cekmece" aria-label="Shopping basket">
+  <header><h3>Your basket</h3><button class="kapat" id="sepetKapat" aria-label="Close" style="position:static">×</button></header>
+  <div class="liste" id="sepetListe"></div>
+  <div class="alt">
+    <div class="toplam"><span>Subtotal</span><span id="sepetToplam">$0.00</span></div>
+    <p class="kargo-not" id="kargoNot">Free shipping on orders over $75</p>
+    <button class="btn btn-fill" id="odeme">CHECKOUT →</button>
+  </div>
+</aside>
 '''
 
 
@@ -71,6 +82,7 @@ def son():
     <span>Printed on demand · Ships from the US · <a href="{MAIL and "mailto:" + MAIL}">{MAIL}</a></span>
   </div>
 </div></footer>
+<script src="/sepet.js" defer></script>
 </body></html>'''
 
 
@@ -233,11 +245,12 @@ ana += f'''
         <div class="fiyat">$${{u.fiyat}}${{u.fiyatMax !== u.fiyat ? ' – $' + u.fiyatMax : ''}}</div>
         <ul>${{u.ozellik.map(o => `<li>${{o}}</li>`).join('')}}</ul>
         ${{u.secenek ? `<p style="font-size:14px;color:var(--mute)">${{u.secenek}} sizes and options available at checkout.</p>` : ''}}
-        <a class="btn btn-fill" href="mailto:{MAIL}?subject=Order%20enquiry%20—%20${{encodeURIComponent(u.ad)}}">ASK ABOUT THIS ITEM</a>
+        <button class="btn btn-fill" id="ekle">ADD TO BASKET →</button>
         <p class="not">Printed on demand and shipped from the US. We do not accept returns —
           if your item arrives damaged we will send a replacement. See
           <a href="/shipping.html" style="color:var(--lav)">shipping &amp; returns</a>.</p>
       </div>`;
+    pencere.querySelector('#ekle').addEventListener('click', () => {{ window.sepeteEkle(u); kapat(); }});
     const buyuk = pencere.querySelector('#buyuk');
     pencere.querySelectorAll('.kucukler button').forEach(b => b.addEventListener('click', () => {{
       buyuk.src = u.gorseller[+b.dataset.g];
