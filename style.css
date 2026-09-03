@@ -87,3 +87,19 @@ footer a:hover{color:var(--lav)}
   .fgrid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){ .prods{grid-template-columns:1fr} }
+
+/* --- giris banner seridi --- */
+.serit{position:relative;overflow:hidden;background:var(--cream)}
+.kaydir{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.kaydir figure{margin:0;min-width:100%}
+.kaydir img{width:100%;height:auto;display:block}
+.serit .ok{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);
+  border:none;width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer;
+  box-shadow:0 2px 12px rgba(17,17,17,.14);display:grid;place-items:center;color:var(--ink)}
+.serit .ok:hover{background:#fff}
+.serit .sol{left:18px} .serit .sag{right:18px}
+.noktalar{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:center;gap:9px}
+.noktalar button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(17,17,17,.28);
+  padding:0;cursor:pointer;transition:width .25s ease}
+.noktalar button[aria-current]{background:var(--lav);width:26px;border-radius:5px}
+@media(max-width:700px){ .serit .ok{width:36px;height:36px;font-size:16px} .serit .sol{left:8px} .serit .sag{right:8px} }

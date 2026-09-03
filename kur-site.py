@@ -89,6 +89,16 @@ ana = bas('But It Looks Cute — Home & Living Store',
           'Cute things for your space. Playful designs, cozy vibes, made to brighten your everyday. '
           'Printed on demand, shipped from the US.', '/')
 ana += f'''
+<div class="serit" id="serit">
+  <div class="kaydir" id="kaydir">
+    <figure><img src="/img/banner-1.jpg" alt="Summer Cute for Every Space — poolside picks" fetchpriority="high" width="1672" height="941"></figure>
+    <figure><img src="/img/banner-2.jpg" alt="Cute details for every corner" loading="lazy" width="1672" height="941"></figure>
+  </div>
+  <button class="ok sol" id="okSol" aria-label="Previous">‹</button>
+  <button class="ok sag" id="okSag" aria-label="Next">›</button>
+  <div class="noktalar" id="noktalar"></div>
+</div>
+
 <div class="hero" style="background:var(--cream);position:relative;overflow:hidden">
   <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
        padding-top:76px;padding-bottom:76px">
@@ -151,6 +161,45 @@ ana += f'''
 </div>
 
 <script>
+// --- giris seridi: otomatik dondurur, tiklaninca durur ---
+(function(){{
+  const kaydir = document.getElementById('kaydir');
+  const say = kaydir.children.length;
+  const noktalar = document.getElementById('noktalar');
+  let i = 0, sayac = null;
+
+  noktalar.innerHTML = Array.from({{length: say}}, (_, j) =>
+    `<button data-j="${{j}}" aria-label="Slide ${{j+1}}"${{j===0?' aria-current="true"':''}}></button>`).join('');
+
+  function goster(n) {{
+    i = (n + say) % say;
+    kaydir.style.transform = `translateX(-${{i * 100}}%)`;
+    noktalar.querySelectorAll('button').forEach((b, j) =>
+      j === i ? b.setAttribute('aria-current','true') : b.removeAttribute('aria-current'));
+  }}
+  function basla() {{ dur(); sayac = setInterval(() => goster(i + 1), 6000); }}
+  function dur() {{ if (sayac) clearInterval(sayac); sayac = null; }}
+
+  document.getElementById('okSag').addEventListener('click', () => {{ goster(i + 1); basla(); }});
+  document.getElementById('okSol').addEventListener('click', () => {{ goster(i - 1); basla(); }});
+  noktalar.addEventListener('click', e => {{
+    const b = e.target.closest('button'); if (b) {{ goster(+b.dataset.j); basla(); }} }});
+  const serit = document.getElementById('serit');
+  serit.addEventListener('mouseenter', dur);
+  serit.addEventListener('mouseleave', basla);
+  // dokunmatik kaydirma
+  let x0 = null;
+  serit.addEventListener('touchstart', e => {{ x0 = e.touches[0].clientX; dur(); }}, {{passive:true}});
+  serit.addEventListener('touchend', e => {{
+    if (x0 === null) return;
+    const d = e.changedTouches[0].clientX - x0;
+    if (Math.abs(d) > 40) goster(i + (d < 0 ? 1 : -1));
+    x0 = null; basla();
+  }}, {{passive:true}});
+  // hareketi azalt tercihi
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) basla();
+}})();
+
 (async function(){{
   const K = await (await fetch('/katalog.json')).json();
   const izgara = document.getElementById('izgara');
