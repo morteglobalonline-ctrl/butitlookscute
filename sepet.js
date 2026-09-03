@@ -6,12 +6,18 @@
   function oku() { try { return JSON.parse(localStorage.getItem('bilc_sepet') || '[]'); } catch (e) { return []; } }
   function yaz(s) { localStorage.setItem('bilc_sepet', JSON.stringify(s)); ciz(); }
 
-  window.sepeteEkle = function (u) {
+  window.sepeteEkle = function (u, varyant) {
+    // Ayni urunun FARKLI varyanti ayri satirdir: mumun iki kokusu
+    // birbirinin uzerine yazilmamali.
     var s = oku(), v = null, i;
-    for (i = 0; i < s.length; i++) if (s[i].slug === u.slug) v = s[i];
+    var vid = varyant ? varyant.id : null;
+    for (i = 0; i < s.length; i++)
+      if (s[i].slug === u.slug && String(s[i].variant_id) === String(vid)) v = s[i];
     if (v) v.adet = Math.min(10, v.adet + 1);
     else s.push({ slug: u.slug, ad: u.ad, tip: u.tip, dz: u.dz,
-                  fiyat: parseFloat(u.fiyat), gorsel: (u.gorseller || [])[0], adet: 1 });
+                  variant_id: vid, varyant_ad: varyant ? varyant.ad : '',
+                  fiyat: parseFloat(varyant ? varyant.fiyat : u.fiyat),
+                  gorsel: (u.gorseller || [])[0], adet: 1 });
     yaz(s); ac();
   };
 
@@ -34,6 +40,7 @@
         return '<div class="satir">' +
           '<img src="' + (x.gorsel || '') + '" alt="' + x.ad + '">' +
           '<div><div class="dz">' + x.dz + '</div><h4>' + x.tip + '</h4>' +
+          (x.varyant_ad ? '<div class="vr">' + x.varyant_ad + '</div>' : '') +
           '<div class="adet"><button data-a="eksi" data-i="' + j + '" aria-label="Less">−</button>' +
           '<span>' + x.adet + '</span>' +
           '<button data-a="arti" data-i="' + j + '" aria-label="More">+</button></div></div>' +
@@ -67,7 +74,8 @@
       odeme.disabled = true; odeme.textContent = 'ONE MOMENT…';
       fetch(API + '/api/checkout', {
         method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ sepet: s.map(function (x) { return { slug: x.slug, adet: x.adet }; }) })
+        body: JSON.stringify({ sepet: s.map(function (x) {
+          return { slug: x.slug, adet: x.adet, variant_id: x.variant_id }; }) })
       }).then(function (r) { return r.json(); }).then(function (j) {
         if (j.url) { location.href = j.url; return; }
         alert(j.hata || 'Checkout is not available yet. Please email info@butitlookscute.com.');

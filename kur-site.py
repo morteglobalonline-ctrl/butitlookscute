@@ -245,13 +245,22 @@ ana += f'''
         <p style="color:var(--mute);margin:0">${{u.aciklama}}</p>
         <div class="fiyat">$${{u.fiyat}}${{u.fiyatMax !== u.fiyat ? ' – $' + u.fiyatMax : ''}}</div>
         <ul>${{u.ozellik.map(o => `<li>${{o}}</li>`).join('')}}</ul>
-        ${{u.secenek ? `<p style="font-size:14px;color:var(--mute)">${{u.secenek}} sizes and options available at checkout.</p>` : ''}}
+        ${{u.varyantlar && u.varyantlar.length > 1 ? `
+          <div class="secim">
+            <label for="vr">${{/Candle/.test(u.tip) ? 'Scent' : 'Size'}}</label>
+            <select id="vr">${{u.varyantlar.map(v =>
+              `<option value="${{v.id}}" data-f="${{v.fiyat}}">${{v.ad}} — $${{v.fiyat}}</option>`).join('')}}</select>
+          </div>` : ''}}
         <button class="btn btn-fill" id="ekle">ADD TO BASKET →</button>
         <p class="not">Printed on demand and shipped from the US. We do not accept returns —
           if your item arrives damaged we will send a replacement. See
           <a href="/shipping.html" style="color:var(--lav)">shipping &amp; returns</a>.</p>
       </div>`;
-    pencere.querySelector('#ekle').addEventListener('click', () => {{ window.sepeteEkle(u); kapat(); }});
+    pencere.querySelector('#ekle').addEventListener('click', () => {{
+      const sec = pencere.querySelector('#vr');
+      const v = sec ? u.varyantlar.find(x => String(x.id) === sec.value) : (u.varyantlar || [])[0];
+      window.sepeteEkle(u, v); kapat();
+    }});
     const buyuk = pencere.querySelector('#buyuk');
     pencere.querySelectorAll('.kucukler button').forEach(b => b.addEventListener('click', () => {{
       buyuk.src = u.gorseller[+b.dataset.g];

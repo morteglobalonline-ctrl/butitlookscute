@@ -9,6 +9,13 @@
   "fiyat": "16.99",
   "fiyatMax": "16.99",
   "aciklama": "A ceramic 11oz mug that makes the morning better. Dishwasher and microwave safe.",
+  "varyantlar": [
+   {
+    "id": 33719,
+    "ad": "11oz",
+    "fiyat": "16.99"
+   }
+  ],
   "ozellik": [
    "11oz ceramic",
    "Dishwasher and microwave safe",
@@ -20,7 +27,7 @@
    "https://images.printify.com/mockup/6a999d6790754f6df309639a/33719/6360/moo-check-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999d6790754f6df309639a/33719/6402/moo-check-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "mug-2-moo-minimal",
@@ -32,6 +39,13 @@
   "fiyat": "16.99",
   "fiyatMax": "16.99",
   "aciklama": "A ceramic 11oz mug that makes the morning better. Dishwasher and microwave safe.",
+  "varyantlar": [
+   {
+    "id": 33719,
+    "ad": "11oz",
+    "fiyat": "16.99"
+   }
+  ],
   "ozellik": [
    "11oz ceramic",
    "Dishwasher and microwave safe",
@@ -43,7 +57,7 @@
    "https://images.printify.com/mockup/6a999d5ed29a10ddcc07c849/33719/6360/moo-minimal-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999d5ed29a10ddcc07c849/33719/6402/moo-minimal-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "mug-1-moo-patch",
@@ -55,6 +69,13 @@
   "fiyat": "16.99",
   "fiyatMax": "16.99",
   "aciklama": "A ceramic 11oz mug that makes the morning better. Dishwasher and microwave safe.",
+  "varyantlar": [
+   {
+    "id": 33719,
+    "ad": "11oz",
+    "fiyat": "16.99"
+   }
+  ],
   "ozellik": [
    "11oz ceramic",
    "Dishwasher and microwave safe",
@@ -66,7 +87,7 @@
    "https://images.printify.com/mockup/6a999d5787fe2ca5920f1106/33719/6360/moo-patch-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999d5787fe2ca5920f1106/33719/6402/moo-patch-mug-11oz-but-it-looks-cute-cow-print-lavender-kitchen-drinkware-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "journal-3-moo-check",
@@ -78,6 +99,13 @@
   "fiyat": "21.99",
   "fiyatMax": "21.99",
   "aciklama": "A spiral bound journal with ruled pages — for lists, plans and small thoughts.",
+  "varyantlar": [
+   {
+    "id": 65224,
+    "ad": "One Size",
+    "fiyat": "21.99"
+   }
+  ],
   "ozellik": [
    "118 ruled pages",
    "6\" × 8\"",
@@ -93,7 +121,7 @@
    "https://images.printify.com/mockup/6a999e2d75e2ac9a620518e0/65224/7240/moo-check-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999e2d75e2ac9a620518e0/65224/7241/moo-check-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "journal-2-moo-minimal",
@@ -105,6 +133,13 @@
   "fiyat": "21.99",
   "fiyatMax": "21.99",
   "aciklama": "A spiral bound journal with ruled pages — for lists, plans and small thoughts.",
+  "varyantlar": [
+   {
+    "id": 65224,
+    "ad": "One Size",
+    "fiyat": "21.99"
+   }
+  ],
   "ozellik": [
    "118 ruled pages",
    "6\" × 8\"",
@@ -120,7 +155,7 @@
    "https://images.printify.com/mockup/6a999e2575e2ac9a620518d9/65224/7240/moo-minimal-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999e2575e2ac9a620518d9/65224/7241/moo-minimal-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "journal-1-moo-patch",
@@ -132,6 +167,13 @@
   "fiyat": "21.99",
   "fiyatMax": "21.99",
   "aciklama": "A spiral bound journal with ruled pages — for lists, plans and small thoughts.",
+  "varyantlar": [
+   {
+    "id": 65224,
+    "ad": "One Size",
+    "fiyat": "21.99"
+   }
+  ],
   "ozellik": [
    "118 ruled pages",
    "6\" × 8\"",
@@ -147,7 +189,7 @@
    "https://images.printify.com/mockup/6a999e1d75e2ac9a620518d2/65224/7240/moo-patch-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front",
    "https://images.printify.com/mockup/6a999e1d75e2ac9a620518d2/65224/7241/moo-patch-spiral-journal-but-it-looks-cute-cow-print-lavender-journals-notebooks-cute-gift.jpg?camera_label=front"
   ],
-  "secenek": 0
+  "secenek": 1
  },
  {
   "slug": "soycandle-3-moo-check",
@@ -159,6 +201,48 @@
   "fiyat": "23.99",
   "fiyatMax": "23.99",
   "aciklama": "A 9oz scented soy candle in a clear jar with a black lid.",
+  "varyantlar": [
+   {
+    "id": 80301,
+    "ad": "Clean Cotton / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80302,
+    "ad": "Sea Salt + Orchid / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80303,
+    "ad": "White Sage and Lavender / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93541,
+    "ad": "Apple Harvest / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93542,
+    "ad": "Cinnamon Vanilla / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104680,
+    "ad": "Christmas Warmth / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104681,
+    "ad": "Coconut Cream + Cardamom / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104682,
+    "ad": "Peppered Passionfruit / 9oz",
+    "fiyat": "23.99"
+   }
+  ],
   "ozellik": [
    "9oz soy wax",
    "Clear jar, black lid",
@@ -199,6 +283,48 @@
   "fiyat": "23.99",
   "fiyatMax": "23.99",
   "aciklama": "A 9oz scented soy candle in a clear jar with a black lid.",
+  "varyantlar": [
+   {
+    "id": 80301,
+    "ad": "Clean Cotton / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80302,
+    "ad": "Sea Salt + Orchid / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80303,
+    "ad": "White Sage and Lavender / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93541,
+    "ad": "Apple Harvest / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93542,
+    "ad": "Cinnamon Vanilla / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104680,
+    "ad": "Christmas Warmth / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104681,
+    "ad": "Coconut Cream + Cardamom / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104682,
+    "ad": "Peppered Passionfruit / 9oz",
+    "fiyat": "23.99"
+   }
+  ],
   "ozellik": [
    "9oz soy wax",
    "Clear jar, black lid",
@@ -239,6 +365,48 @@
   "fiyat": "23.99",
   "fiyatMax": "23.99",
   "aciklama": "A 9oz scented soy candle in a clear jar with a black lid.",
+  "varyantlar": [
+   {
+    "id": 80301,
+    "ad": "Clean Cotton / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80302,
+    "ad": "Sea Salt + Orchid / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 80303,
+    "ad": "White Sage and Lavender / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93541,
+    "ad": "Apple Harvest / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 93542,
+    "ad": "Cinnamon Vanilla / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104680,
+    "ad": "Christmas Warmth / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104681,
+    "ad": "Coconut Cream + Cardamom / 9oz",
+    "fiyat": "23.99"
+   },
+   {
+    "id": 104682,
+    "ad": "Peppered Passionfruit / 9oz",
+    "fiyat": "23.99"
+   }
+  ],
   "ozellik": [
    "9oz soy wax",
    "Clear jar, black lid",
@@ -279,6 +447,48 @@
   "fiyat": "33.99",
   "fiyatMax": "33.99",
   "aciklama": "An 11oz candle in frosted glass with a wooden lid.",
+  "varyantlar": [
+   {
+    "id": 114648,
+    "ad": "Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114649,
+    "ad": "Mango Coconut / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114650,
+    "ad": "Fraser Fir / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114651,
+    "ad": "Cinnamon Chai / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114652,
+    "ad": "Lavender / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114653,
+    "ad": "Blackberry Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114654,
+    "ad": "Oakmoss and Amber / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114655,
+    "ad": "Sea Minerals / 11oz",
+    "fiyat": "33.99"
+   }
+  ],
   "ozellik": [
    "11oz soy wax",
    "Frosted glass, wooden lid",
@@ -319,6 +529,48 @@
   "fiyat": "33.99",
   "fiyatMax": "33.99",
   "aciklama": "An 11oz candle in frosted glass with a wooden lid.",
+  "varyantlar": [
+   {
+    "id": 114648,
+    "ad": "Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114649,
+    "ad": "Mango Coconut / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114650,
+    "ad": "Fraser Fir / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114651,
+    "ad": "Cinnamon Chai / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114652,
+    "ad": "Lavender / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114653,
+    "ad": "Blackberry Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114654,
+    "ad": "Oakmoss and Amber / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114655,
+    "ad": "Sea Minerals / 11oz",
+    "fiyat": "33.99"
+   }
+  ],
   "ozellik": [
    "11oz soy wax",
    "Frosted glass, wooden lid",
@@ -359,6 +611,48 @@
   "fiyat": "33.99",
   "fiyatMax": "33.99",
   "aciklama": "An 11oz candle in frosted glass with a wooden lid.",
+  "varyantlar": [
+   {
+    "id": 114648,
+    "ad": "Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114649,
+    "ad": "Mango Coconut / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114650,
+    "ad": "Fraser Fir / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114651,
+    "ad": "Cinnamon Chai / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114652,
+    "ad": "Lavender / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114653,
+    "ad": "Blackberry Vanilla / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114654,
+    "ad": "Oakmoss and Amber / 11oz",
+    "fiyat": "33.99"
+   },
+   {
+    "id": 114655,
+    "ad": "Sea Minerals / 11oz",
+    "fiyat": "33.99"
+   }
+  ],
   "ozellik": [
    "11oz soy wax",
    "Frosted glass, wooden lid",
@@ -399,6 +693,43 @@
   "fiyat": "26.99",
   "fiyatMax": "54.99",
   "aciklama": "A soft spun polyester throw pillow that pulls a room together.",
+  "varyantlar": [
+   {
+    "id": 41521,
+    "ad": "14\" × 14\"",
+    "fiyat": "26.99"
+   },
+   {
+    "id": 41524,
+    "ad": "16\" × 16\"",
+    "fiyat": "28.99"
+   },
+   {
+    "id": 41527,
+    "ad": "18\" × 18\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 41530,
+    "ad": "20\" × 20\"",
+    "fiyat": "34.99"
+   },
+   {
+    "id": 244992,
+    "ad": "24\" × 24\"",
+    "fiyat": "45.99"
+   },
+   {
+    "id": 244993,
+    "ad": "26\" × 26\"",
+    "fiyat": "51.99"
+   },
+   {
+    "id": 244994,
+    "ad": "28\" × 28\"",
+    "fiyat": "54.99"
+   }
+  ],
   "ozellik": [
    "Spun polyester cover",
    "Printed on both sides",
@@ -426,6 +757,43 @@
   "fiyat": "26.99",
   "fiyatMax": "54.99",
   "aciklama": "A soft spun polyester throw pillow that pulls a room together.",
+  "varyantlar": [
+   {
+    "id": 41521,
+    "ad": "14\" × 14\"",
+    "fiyat": "26.99"
+   },
+   {
+    "id": 41524,
+    "ad": "16\" × 16\"",
+    "fiyat": "28.99"
+   },
+   {
+    "id": 41527,
+    "ad": "18\" × 18\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 41530,
+    "ad": "20\" × 20\"",
+    "fiyat": "34.99"
+   },
+   {
+    "id": 244992,
+    "ad": "24\" × 24\"",
+    "fiyat": "45.99"
+   },
+   {
+    "id": 244993,
+    "ad": "26\" × 26\"",
+    "fiyat": "51.99"
+   },
+   {
+    "id": 244994,
+    "ad": "28\" × 28\"",
+    "fiyat": "54.99"
+   }
+  ],
   "ozellik": [
    "Spun polyester cover",
    "Printed on both sides",
@@ -453,6 +821,43 @@
   "fiyat": "26.99",
   "fiyatMax": "54.99",
   "aciklama": "A soft spun polyester throw pillow that pulls a room together.",
+  "varyantlar": [
+   {
+    "id": 41521,
+    "ad": "14\" × 14\"",
+    "fiyat": "26.99"
+   },
+   {
+    "id": 41524,
+    "ad": "16\" × 16\"",
+    "fiyat": "28.99"
+   },
+   {
+    "id": 41527,
+    "ad": "18\" × 18\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 41530,
+    "ad": "20\" × 20\"",
+    "fiyat": "34.99"
+   },
+   {
+    "id": 244992,
+    "ad": "24\" × 24\"",
+    "fiyat": "45.99"
+   },
+   {
+    "id": 244993,
+    "ad": "26\" × 26\"",
+    "fiyat": "51.99"
+   },
+   {
+    "id": 244994,
+    "ad": "28\" × 28\"",
+    "fiyat": "54.99"
+   }
+  ],
   "ozellik": [
    "Spun polyester cover",
    "Printed on both sides",
@@ -480,6 +885,23 @@
   "fiyat": "20.99",
   "fiyatMax": "30.99",
   "aciklama": "A wide desk mat that turns a plain desk into your favourite corner.",
+  "varyantlar": [
+   {
+    "id": 81075,
+    "ad": "31.5\" × 15.5\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 103806,
+    "ad": "14.4\" × 12.1\"",
+    "fiyat": "20.99"
+   },
+   {
+    "id": 103807,
+    "ad": "23.6\" × 13.8\"",
+    "fiyat": "24.99"
+   }
+  ],
   "ozellik": [
    "Smooth polyester top",
    "Non-slip rubber base",
@@ -512,6 +934,23 @@
   "fiyat": "20.99",
   "fiyatMax": "30.99",
   "aciklama": "A wide desk mat that turns a plain desk into your favourite corner.",
+  "varyantlar": [
+   {
+    "id": 81075,
+    "ad": "31.5\" × 15.5\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 103806,
+    "ad": "14.4\" × 12.1\"",
+    "fiyat": "20.99"
+   },
+   {
+    "id": 103807,
+    "ad": "23.6\" × 13.8\"",
+    "fiyat": "24.99"
+   }
+  ],
   "ozellik": [
    "Smooth polyester top",
    "Non-slip rubber base",
@@ -544,6 +983,23 @@
   "fiyat": "20.99",
   "fiyatMax": "30.99",
   "aciklama": "A wide desk mat that turns a plain desk into your favourite corner.",
+  "varyantlar": [
+   {
+    "id": 81075,
+    "ad": "31.5\" × 15.5\"",
+    "fiyat": "30.99"
+   },
+   {
+    "id": 103806,
+    "ad": "14.4\" × 12.1\"",
+    "fiyat": "20.99"
+   },
+   {
+    "id": 103807,
+    "ad": "23.6\" × 13.8\"",
+    "fiyat": "24.99"
+   }
+  ],
   "ozellik": [
    "Smooth polyester top",
    "Non-slip rubber base",
