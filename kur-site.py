@@ -17,7 +17,7 @@ MENU = [('/', 'Shop'), ('/about.html', 'About'), ('/faq.html', 'FAQ'),
         ('/shipping.html', 'Shipping'), ('/contact.html', 'Contact')]
 
 
-def bas(baslik, aciklama, aktif=''):
+def bas(baslik, aciklama, aktif='', yol='/', gorsel=None):
     nav = ''.join(
         f'<a href="{u}"{" aria-current=\"page\"" if u == aktif else ""}>{html.escape(a)}</a>'
         for u, a in MENU)
@@ -32,6 +32,31 @@ def bas(baslik, aciklama, aktif=''):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/style.css">
+<link rel="canonical" href="https://{ALAN}{yol}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#8B6DC4">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="But It Looks Cute">
+<meta property="og:title" content="{html.escape(baslik)}">
+<meta property="og:description" content="{html.escape(aciklama)}">
+<meta property="og:url" content="https://{ALAN}{yol}">
+<meta property="og:image" content="https://{ALAN}/img/banner-1.jpg">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(baslik)}">
+<meta name="twitter:description" content="{html.escape(aciklama)}">
+<meta name="twitter:image" content="https://{ALAN}/img/banner-1.jpg">
+<script type="application/ld+json">{{
+ "@context":"https://schema.org","@type":"OnlineStore",
+ "name":"But It Looks Cute","alternateName":"butitlookscute",
+ "url":"https://{ALAN}/","logo":"https://{ALAN}/img/banner-1.jpg",
+ "image":"https://{ALAN}/img/banner-1.jpg",
+ "description":"Cute things for your space. Playful home and living products — mugs, candles, journals, pillows and desk mats. Printed on demand, shipped from the US.",
+ "email":"{MAIL}","sameAs":["{IG}"],
+ "areaServed":{{"@type":"Country","name":"United States"}},
+ "currenciesAccepted":"USD","paymentAccepted":"Credit Card"
+}}</script>
 <script>window.MAGAZA_API="https://api.butitlookscute.com";</script>
 </head>
 <body>
@@ -88,7 +113,7 @@ def son():
 
 
 def belge(dosya, baslik, kicik, govde, aktif=''):
-    icerik = bas(f'{baslik} — But It Looks Cute', kicik, aktif)
+    icerik = bas(f'{baslik} — But It Looks Cute', kicik, aktif, '/' + dosya)
     icerik += f'<div class="doc"><h1>{html.escape(baslik)}</h1><p class="kicik">{html.escape(kicik)}</p>{govde}</div>'
     icerik += son()
     open(os.path.join(DIZIN, dosya), 'w', encoding='utf-8').write(icerik)
@@ -154,6 +179,7 @@ ana += f'''
   <h2 class="sec-title">♥ THE CUTE COLLECTION ♥</h2>
   <p class="sec-sub">Six products, three designs each — Moo Patch, Moo Minimal and Moo Check.
     Tap any product to see every angle.</p>
+  <div class="filtre" id="filtre"></div>
   <div class="prods" id="izgara"></div>
 </div></section>
 
@@ -216,7 +242,7 @@ ana += f'''
 (async function(){{
   const K = await (await fetch('/katalog.json')).json();
   const izgara = document.getElementById('izgara');
-  izgara.innerHTML = K.map((u,i) => `
+  const kart = (u, i) => `
     <div class="card" data-i="${{i}}" role="button" tabindex="0">
       <div class="ph"><img src="${{u.gorseller[0]||''}}" alt="${{u.ad}}" loading="lazy"></div>
       <div class="body">
@@ -225,7 +251,42 @@ ana += f'''
         <div class="pr">$${{u.fiyat}}${{u.fiyatMax !== u.fiyat ? '–$' + u.fiyatMax : ''}}</div>
         <div class="say">${{u.gorseller.length}} photo${{u.gorseller.length > 1 ? 's' : ''}}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+  izgara.innerHTML = K.map((u, i) => kart(u, i)).join('');
+
+  // --- KATEGORI VE TASARIM FILTRESI ---
+  // 18 urun var ve artacak; kategori olmadan alt siralar hic gorulmuyor.
+  const filtre = document.getElementById('filtre');
+  let secKat = 'hepsi', secDz = 'hepsi';
+
+  const katlar = [...new Set(K.map(u => u.kat))].sort();
+  const dzler  = [...new Set(K.map(u => u.dz))].sort();
+  const say = (alan, deger) => K.filter(u => u[alan] === deger).length;
+
+  filtre.innerHTML =
+    `<div class="filtre-baslik">Category</div><div class="filtre-grup">` +
+    `<button data-t="kat" data-v="hepsi" aria-current="true">All<span class="sayi">${{K.length}}</span></button>` +
+    katlar.map(c => `<button data-t="kat" data-v="${{c}}">${{c}}<span class="sayi">${{say('kat', c)}}</span></button>`).join('') +
+    `</div><div class="filtre-baslik" style="margin-top:16px">Design</div><div class="filtre-grup">` +
+    `<button data-t="dz" data-v="hepsi" aria-current="true">All</button>` +
+    dzler.map(d => `<button data-t="dz" data-v="${{d}}">${{d}}<span class="sayi">${{say('dz', d)}}</span></button>`).join('') +
+    `</div>`;
+
+  function suz() {{
+    const liste = K.map((u, i) => ({{u, i}}))
+      .filter(({{u}}) => (secKat === 'hepsi' || u.kat === secKat) && (secDz === 'hepsi' || u.dz === secDz));
+    izgara.innerHTML = liste.length ? liste.map(({{u, i}}) => kart(u, i)).join('')
+      : '<div class="bos-sonuc"><p>Nothing here yet — try another combination.</p></div>';
+  }}
+
+  filtre.addEventListener('click', e => {{
+    const b = e.target.closest('button'); if (!b) return;
+    const tur = b.dataset.t;
+    if (tur === 'kat') secKat = b.dataset.v; else secDz = b.dataset.v;
+    filtre.querySelectorAll(`button[data-t="${{tur}}"]`).forEach(x => x.removeAttribute('aria-current'));
+    b.setAttribute('aria-current', 'true');
+    suz();
+  }});
 
   const perde = document.getElementById('perde');
   const pencere = document.getElementById('pencere');
@@ -560,3 +621,56 @@ replacement the same day.</p>
 
 for ad, n in sayfalar:
     print(f'  {ad:20} {n} bayt')
+
+
+# ─────────────────── ARAMA MOTORLARI ───────────────────
+# Site yeni; Google onu kendiliginden bulmaz. Sitemap + robots ile
+# haritayi veriyoruz, urun sayfalari da yapisal veriyle isaretleniyor.
+from datetime import date
+bugun = date.today().isoformat()
+
+sayfa_listesi = [('/', '1.0', 'weekly'), ('/about.html', '0.7', 'monthly'),
+                 ('/faq.html', '0.7', 'monthly'), ('/shipping.html', '0.6', 'monthly'),
+                 ('/contact.html', '0.6', 'monthly'), ('/privacy.html', '0.3', 'yearly'),
+                 ('/terms.html', '0.3', 'yearly')]
+
+sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+for yol, oncelik, sik in sayfa_listesi:
+    sm.append(f'  <url><loc>https://{ALAN}{yol}</loc><lastmod>{bugun}</lastmod>'
+              f'<changefreq>{sik}</changefreq><priority>{oncelik}</priority></url>')
+sm.append('</urlset>')
+open(os.path.join(DIZIN, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(sm))
+
+open(os.path.join(DIZIN, 'robots.txt'), 'w', encoding='utf-8').write(
+    f'User-agent: *\nAllow: /\n\nSitemap: https://{ALAN}/sitemap.xml\n')
+
+# Urun kataloguna yapisal veri — Google urunleri fiyatiyla gosterebilsin
+urun_ld = {
+    "@context": "https://schema.org", "@type": "ItemList",
+    "name": "But It Looks Cute collection",
+    "numberOfItems": len(katalog),
+    "itemListElement": [{
+        "@type": "ListItem", "position": i + 1,
+        "item": {
+            "@type": "Product",
+            "name": u["ad"], "category": u["kat"],
+            "description": u["aciklama"][:300],
+            "image": u["gorseller"][:3],
+            "brand": {"@type": "Brand", "name": "But It Looks Cute"},
+            "offers": {"@type": "Offer", "priceCurrency": "USD", "price": u["fiyat"],
+                       "availability": "https://schema.org/InStock",
+                       "url": f"https://{ALAN}/#shop",
+                       "shippingDetails": {"@type": "OfferShippingDetails",
+                           "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}}}
+        }} for i, u in enumerate(katalog)]
+}
+ana_yol = os.path.join(DIZIN, 'index.html')
+h = open(ana_yol, encoding='utf-8').read()
+h = h.replace('</head>', '<script type="application/ld+json">'
+              + json.dumps(urun_ld, ensure_ascii=False) + '</script>\n</head>')
+open(ana_yol, 'w', encoding='utf-8').write(h)
+
+print(f'  sitemap.xml          {len(sayfa_listesi)} sayfa')
+print(f'  robots.txt           yazıldı')
+print(f'  ürün yapısal verisi  {len(katalog)} ürün')

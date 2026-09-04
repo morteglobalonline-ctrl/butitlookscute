@@ -86,7 +86,17 @@ footer a:hover{color:var(--lav)}
   .pencere{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:560px){ .prods{grid-template-columns:1fr} }
+@media(max-width:560px){
+  .prods{grid-template-columns:repeat(2,1fr);gap:12px}
+  .card .body{padding:11px 12px 15px}
+  .card h3{font-size:13.5px}
+  .card .dz{font-size:10px}
+  .card .pr{font-size:14.5px;margin-top:6px}
+  .card .say{font-size:11px}
+  section{padding:46px 0}
+  .wrap{padding:0 14px}
+}
+@media(max-width:380px){ .prods{gap:9px} .card h3{font-size:12.5px} }
 
 /* --- giris banner seridi --- */
 .serit{position:relative;overflow:hidden;background:var(--cream)}
@@ -142,3 +152,20 @@ footer a:hover{color:var(--lav)}
   background-size:6px 6px,6px 6px;background-repeat:no-repeat}
 .secim select:focus{outline:2px solid var(--lav);outline-offset:1px;border-color:var(--lav)}
 .satir .vr{font-size:12px;color:var(--mute);margin-top:1px}
+
+/* --- kategori filtresi --- */
+.filtre{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:0 0 32px}
+.filtre button{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);
+  border-radius:999px;padding:9px 18px;font-family:var(--body);font-weight:800;
+  font-size:13px;cursor:pointer;transition:all .15s ease;white-space:nowrap}
+.filtre button:hover{border-color:var(--lav)}
+.filtre button[aria-current]{background:var(--lav);border-color:var(--lav);color:#fff}
+.filtre .sayi{opacity:.6;font-weight:700;margin-left:5px}
+.filtre-grup{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.filtre-baslik{width:100%;text-align:center;font-size:11px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 0 4px}
+.bos-sonuc{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--mute)}
+@media(max-width:560px){
+  .filtre{gap:7px;margin-bottom:24px}
+  .filtre button{padding:8px 13px;font-size:12px}
+}
