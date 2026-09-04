@@ -6,7 +6,13 @@ Site Builder Agent yalnizca bu dosyayi ve katalog.json'u degistirir.
 import json, os, html
 
 DIZIN = os.path.dirname(os.path.abspath(__file__))
-MAIL = 'info@butitlookscute.com'
+# Sitede GORUNEN iletisim adresi. butitlookscute.com'dan gonderim henuz
+# kurulu degil (Cloudflare Email Routing tek yonlu); thendop.com'da calisan
+# MS365 var, cevap oradan gidiyor. Resend kurulunca buraya geri donulecek.
+MAIL = 'info@thendop.com'
+# Instagram ve alan adi kayitlarinda kullanilan adres — gelen posta
+# Cloudflare uzerinden Gmail'e dusuyor, o yon calisiyor.
+MARKA_MAIL = 'info@butitlookscute.com'
 IG = 'https://instagram.com/butitlookscute'
 ALAN = 'butitlookscute.com'
 
